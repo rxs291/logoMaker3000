@@ -28,29 +28,7 @@ inquirer
       type: "list",
       message: "What shape would you like your logo to be?",
       name: "logoShape",
-      choices: [
-        {
-          name: "Circle",
-          value:{
-            name: "Circle",
-            badge:"ENTER SHAPE SIZE",
-          }
-        },
-        {
-          name: "Square",
-          value: {
-            name: "Square",
-            badge:"ENTER SHAPE SIZE",
-          }
-        },
-        {
-          name: "Triangle",
-          value:{
-            name: "Triangle",
-           badge:"ENTER SHAPE SIZE",
-          }
-        },
-      ],
+      choices: ['Circle', 'Triangle', 'Square'],
     },
     {
       type: "input",
@@ -72,9 +50,9 @@ inquirer
   const generateShape = ({logoText, textColor, logoShape, shapeColor}) => {
     let shape; 
 
-    if (logoShape.name === "Triangle"){
+    if (logoShape === "Triangle"){
         shape = new Triangle(shapeColor);
-    }  else if(logoShape.name === "Square"){
+    }  else if(logoShape === "Square"){
         shape = new Square(shapeColor);
     } else {
         shape = new Circle(shapeColor);
